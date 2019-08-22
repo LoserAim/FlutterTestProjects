@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import './ui/home.dart';
+import './ui/make_it_rain.dart';
 
 void main() {
   var title = "Make It Rain";
-  runApp(new MaterialApp(title: title, home: new Home(title: title,),)
+  runApp(new MaterialApp(title: title, home: new MakeItRain(),)
       );
       
 }
