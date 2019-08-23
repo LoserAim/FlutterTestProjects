@@ -5,8 +5,17 @@ class CustomLoginForm extends StatefulWidget {
   _CustomLoginFormState createState() => _CustomLoginFormState();
 }
 
+
+//Data Class
+class _LoginData {
+  String name = "";
+  String password = "";
+
+}
 class _CustomLoginFormState extends State<CustomLoginForm> {
   final _formKey = GlobalKey<FormState>();
+
+  _LoginData _data = new _LoginData();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +45,8 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                   if (value.isEmpty) {
                     return "Please enter name";
                   } else {
-                    print("All is Good");
+                    _data.name= value;
+                    print("Data: ${_data.name}");
                   }
                 },
               ),
@@ -55,7 +65,7 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                   if (value.isEmpty) {
                     return "Please enter password";
                   } else {
-                    print("All is Good");
+                    _data.password= value;
                   }
                 },
               ),
@@ -68,6 +78,10 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                     padding: const EdgeInsets.all(8.0),
                     child: RaisedButton(
                       onPressed: () {
+                        setState(() {
+                          _data.name= _data.name;
+                        });
+
                         if (_formKey.currentState.validate()) {
                           Scaffold.of(context).showSnackBar(
                               SnackBar(content: Text("All is good!")));
@@ -80,8 +94,12 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
                     padding: const EdgeInsets.all(8.0),
                     child: RaisedButton(
                       onPressed: () {
+                        
                         if (_formKey.currentState.validate()) {
                           _formKey.currentState.reset();
+                          setState(() {
+                          _data.name = "";
+                        });
                         }
                       },
                       child: Text("Clear"),
@@ -93,7 +111,8 @@ class _CustomLoginFormState extends State<CustomLoginForm> {
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Center(
-                child: Text("Hello There",
+                child: _data.name.isEmpty ? Text("") :
+                Text("Welcome ${_data.name}",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 19.0,

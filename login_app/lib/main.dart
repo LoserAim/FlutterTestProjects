@@ -18,7 +18,7 @@ class Login extends StatelessWidget {
           centerTitle: true,
 
           ),
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Colors.blueGrey.shade300,
           body: CustomLoginForm()
         ),
       
