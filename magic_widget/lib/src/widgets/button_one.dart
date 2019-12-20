@@ -9,6 +9,7 @@ class BtnOneWidget extends StatelessWidget {
     final bloc = first_bloc.MagicalWidget.of(context);
 
     _onPressedFirstBtn(first_bloc.MagicalBloc bloc) {
+  
       bloc.changeUIElement(true, first_bloc.MAGICAL_firstPageControls.enableSecondBtn);
     }
 
@@ -24,6 +25,7 @@ class BtnOneWidget extends StatelessWidget {
                 },
               );
  
+  }
 }
           
             

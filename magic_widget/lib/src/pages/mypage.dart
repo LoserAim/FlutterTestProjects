@@ -19,7 +19,8 @@ class MyPage extends StatelessWidget {
         BtnOneWidget(),
         BtnTwoWidget(),
         TxtFieldOneWidget(),
-        TxtFieldTwoWidget(),]
+        TxtFieldTwoWidget(),
+        BtnTwoWidget()]
       )); 
   }
 }

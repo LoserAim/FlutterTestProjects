@@ -18,12 +18,13 @@ class BtnTwoWidget extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot snapshot){
         final enable = snapshot.data.enableSecondBtn;
         return RaisedButton(
-          child: Text("Second Button"),
+          child: Text(snapshot.data.txtField2Input),
           onPressed: enable ? () => _onPressedSecondBtn(bloc) : null,
                   );
                 },
               );
  
+  }
 }
           
             
