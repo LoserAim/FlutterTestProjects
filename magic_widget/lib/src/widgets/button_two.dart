@@ -9,7 +9,10 @@ class BtnTwoWidget extends StatelessWidget {
     final bloc = first_bloc.MagicalWidget.of(context);
 
     _onPressedSecondBtn(first_bloc.MagicalBloc bloc) {
-      bloc.changeUIElement("You pressed Button 2", first_bloc.MAGICAL_firstPageControls.txtField1Input);
+      bloc.changeUIElements(
+        ["You pressed Button 2", false], 
+        [first_bloc.MAGICAL_firstPageControls.txtField1Input, first_bloc.MAGICAL_firstPageControls.enableSecondBtn]);
+      
     }
 
     return StreamBuilder<first_bloc.MagicalController>(

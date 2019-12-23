@@ -1,3 +1,4 @@
+import 'package:magic_widget/src/pages/featlistpage.dart';
 import 'package:magic_widget/src/pages/mypage.dart';
 import 'package:flutter/material.dart';
 void main() => runApp(ExampleApp());
