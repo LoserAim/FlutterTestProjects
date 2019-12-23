@@ -9,23 +9,20 @@ class BtnOneWidget extends StatelessWidget {
     final bloc = first_bloc.MagicalWidget.of(context);
 
     _onPressedFirstBtn(first_bloc.MagicalBloc bloc) {
-  
-      bloc.changeUIElement(true, first_bloc.MAGICAL_firstPageControls.enableSecondBtn);
+      bloc.changeUIElement(
+          true, first_bloc.MAGICAL_firstPageControls.enableSecondBtn);
     }
 
     return StreamBuilder<first_bloc.MagicalController>(
-      stream: bloc.magicalStream ,
-      initialData: first_bloc.MagicalController() ,
-      builder: (BuildContext context, AsyncSnapshot snapshot){
+      stream: bloc.magicalStream,
+      initialData: first_bloc.MagicalController(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
         final enable = snapshot.data.enableFirstBtn;
         return RaisedButton(
           child: Text("First Button"),
           onPressed: enable ? () => _onPressedFirstBtn(bloc) : null,
-                  );
-                },
-              );
- 
+        );
+      },
+    );
   }
 }
-          
-            
